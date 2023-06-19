@@ -111,7 +111,7 @@ router.get("/:userId/:token", async (req, res) => {
         await user.save();
         await token.delete();
 
-        res.redirect("http://localhost:3000/signin");
+        res.redirect("https://blogtoday.vercel.app/signin");
     } catch (error) {
         res.send("An error occured");
         console.log(error);
