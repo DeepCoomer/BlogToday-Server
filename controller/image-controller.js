@@ -16,7 +16,9 @@ export const uploadImage = (req, res) => {
     if (!req.file)
         return res.status(404).json("File not found");
 
-    const imageUrl = `${url}/api/file/${req.file.filename}`;
+    const imageUrl = `${req.protocol}}://${req.get(
+        "host"
+      )}/api/file/${req.file.filename}`;
 
     res.status(200).json(imageUrl);
 }
