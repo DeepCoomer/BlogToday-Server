@@ -80,7 +80,9 @@ router.post("/createuser", [
             }).save();
         }
 
-        const link = `http://localhost:8000/api/users/${user._id}/${token.token}`;
+        const link = `${req.protocol}}://${req.get(
+            "host"
+          )}/api/users/${user._id}/${token.token}`;
         await sendEmail(user.email, "Email Comfirmation", link);
 
         const message = "Email Confirmation Link send Successfully";
