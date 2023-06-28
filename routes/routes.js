@@ -16,7 +16,7 @@ router.post('/posts/author', getAuthorPosts);
 router.put('/update/:id', updatePost);
 router.delete('/delete/:id', deletePost);
 
-router.post('/file/upload', upload.single('file'), uploadImage);
+router.post('/file/upload', uploadImage);
 router.get('/file/:filename', getImage);
 
 router.post('/comment/new', newComment);
